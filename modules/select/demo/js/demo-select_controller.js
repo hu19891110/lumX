@@ -150,7 +150,26 @@
                 name: 'Nicole'
             }]
         };
-        vm.selectVegetables = ['Broccoli', 'Cabbage', 'Carrot', 'Lettuce', 'Spinach'];
+        vm.selectVegetables = [
+            {
+                name: 'Broccoli',
+                type: 'Brassica'
+            },
+            {
+                name: 'Cabbage',
+                type: 'Brassica'
+            },
+            {
+                name: 'Carrot',
+                type: 'Umbelliferous'
+            }
+        ];
+        vm.newValueTransformer = function(chip) {
+            return {
+                name: chip,
+                type: 'Unknown'
+            };
+        };
         vm.selectModel = {
             selectedPerson: undefined,
             selectedPeople: [vm.selectPeople[2], vm.selectPeople[4]],
